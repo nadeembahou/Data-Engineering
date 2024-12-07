@@ -75,7 +75,7 @@ The Stock Analytics Pipeline is an end-to-end solution for aggregating, processi
 
 The database schema forms the backbone of the Stock Analytics Pipeline. The following tables are central to the system, and their relationships are illustrated in the ERD below:
 
-![Entity-Relationship Diagram](db/ERD.png)
+![Entity-Relationship Diagram](ERD.png)
 
 **Database Structure**:
 
