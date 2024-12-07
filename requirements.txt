@@ -1,0 +1,9 @@
+Flask
+pandas 
+praw
+nltk
+requests
+psycopg2-binary 
+apache-airflow-providers-postgres
+sqlalchemy
+alpaca-py

@@ -1,0 +1,43 @@
+services:
+  postgres:
+    image: postgres:14
+    container_name: postgres_container
+    environment:
+      POSTGRES_USER: project
+      POSTGRES_PASSWORD: jhu
+      POSTGRES_DB: project_db
+    ports:
+      - "5432:5432"
+    volumes:
+      - db_data:/var/lib/postgresql/data
+      - ./db/init.sql:/docker-entrypoint-initdb.d/init.sql
+
+  airflow-jupyter:
+    build: .
+    ports:
+      - "8888:8888"
+      - "8080:8080"
+      - "5001:5001"
+    volumes:
+      - ./airflow/dags:/usr/local/airflow/dags
+      - ./api:/home/project/api
+      - ./logs:/home/project/logs
+    depends_on:
+      - postgres
+    container_name: airflow_jupyter_container
+    environment:
+      - AIRFLOW_HOME=/usr/local/airflow
+      - AIRFLOW__CORE__DAGS_FOLDER=/usr/local/airflow/dags
+      - AIRFLOW__CORE__SQL_ALCHEMY_CONN=postgresql+psycopg2://project:jhu@postgres:5432/project_db
+      
+    command: >
+      bash -c "
+      airflow db upgrade &&
+      airflow users create -r Admin -u admin -p admin -e admin@example.com -f Admin -l User &&
+      airflow scheduler & airflow webserver & 
+      jupyter lab --ip=0.0.0.0 --no-browser --allow-root &
+      python /home/project/api/flask_api.py
+      "
+
+volumes:
+  db_data:
