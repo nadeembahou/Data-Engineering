@@ -333,14 +333,14 @@ The Flask API provides access to processed data, allowing users to query and vis
 
 [Back to Top](#contents)
 
-**Airflow Dashboard**:
-![Airflow Dashboard](document_images/Airflow.png)
+**Airflow Dashboard**:  
+![Airflow Dashboard](Airflow.png)
 
-**Flask API Home Page**:
-![Flask API](document_images/flask_api_homepage.png)
+**Flask API Home Page**:  
+![Flask API](flask_api_homepage.png)
 
-**Metrics Results example**:
-![Query Example](document_images/Query.png)
+**Metrics Results example**:  
+![Query Example](Query.png)
 
 ---
 
