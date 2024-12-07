@@ -358,6 +358,6 @@ The Flask API provides access to processed data, allowing users to query and vis
 
 [Back to Top](#contents)
 
-This project integrates stock data, news, and social media into a comprehensive analytics platform. It ensures accurate, real-time insights for financial analysis and decision-making. Contact for questions: [ahakobi1@jh.edu](mailto:ahakobi1@jh.edu) or [nbahou1@jh.edu](mailto:nbahou1@jh.edu).
+This project integrates stock data, news, and social media into a comprehensive analytics platform. It ensures accurate, real-time insights for financial analysis and decision-making. Contact for questions: [nbahou1@jh.edu](mailto:nbahou1@jh.edu).
 
 
